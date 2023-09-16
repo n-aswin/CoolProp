@@ -1281,7 +1281,1390 @@ function AbstractState_all_critical_points(handle::Clong, length::Integer)
     return  AbstractState_all_critical_points(handle, length, T, p, rhomolar, stable)
 end
 
-for symorigin = [:PropsSI, :PhaseSI, :K2F, :F2K, :HAPropsSI, :AbstractState_factory, :AbstractState_free, :AbstractState_set_fractions, :AbstractState_update, :AbstractState_keyed_output, :AbstractState_output, :AbstractState_specify_phase, :AbstractState_unspecify_phase, :AbstractState_update_and_common_out, :AbstractState_update_and_1_out, :AbstractState_update_and_5_out, :AbstractState_set_binary_interaction_double, :AbstractState_set_cubic_alpha_C, :AbstractState_set_fluid_parameter_double, :AbstractState_first_saturation_deriv, :AbstractState_first_partial_deriv, :AbstractState_build_phase_envelope, :AbstractState_build_spinodal, :AbstractState_all_critical_points, :AbstractState_get_phase_envelope_data, :AbstractState_get_spinodal_data]
+"""
+    AbstractState_Bvirial(handle::Clong)
+
+Return the B virial coefficient.
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_Bvirial(handle::Clong)
+    output = ccall( (:AbstractState_Bvirial, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_Cvirial(handle::Clong)
+
+Return the C virial coefficient.
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_Cvirial(handle::Clong)
+    output = ccall( (:AbstractState_Cvirial, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_PIP(handle::Clong)
+
+Return the phase identification parameter (PIP) of G. Venkatarathnam and L.R. Oellrich.
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_PIP(handle::Clong)
+    output = ccall( (:AbstractState_PIP, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_Prandtl(handle::Clong)
+
+Return the Prandtl number (dimensionless)
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_Prandtl(handle::Clong)
+    output = ccall( (:AbstractState_Prandtl, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_Q(handle::Clong)
+
+Return the vapor quality (mol/mol); Q = 0 for saturated liquid
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_Q(handle::Clong)
+    output = ccall( (:AbstractState_Q, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_T(handle::Clong)
+
+Return the temperature in K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_T(handle::Clong)
+    output = ccall( (:AbstractState_T, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_T_critical(handle::Clong)
+
+Return the critical temperature in K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_T_critical(handle::Clong)
+    output = ccall( (:AbstractState_T_critical, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_T_reducing(handle::Clong)
+
+Return the reducing point temperature in K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_T_reducing(handle::Clong)
+    output = ccall( (:AbstractState_T_reducing, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_Tmax(handle::Clong)
+
+Get the maximum temperature in K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_Tmax(handle::Clong)
+    output = ccall( (:AbstractState_Tmax, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_Tmin(handle::Clong)
+
+Get the minimum temperature in K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_Tmin(handle::Clong)
+    output = ccall( (:AbstractState_Tmin, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_Ttriple(handle::Clong)
+
+Get the triple point temperature in K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_Ttriple(handle::Clong)
+    output = ccall( (:AbstractState_Ttriple, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_acentric_factor(handle::Clong)
+
+Return the acentric factor
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_acentric_factor(handle::Clong)
+    output = ccall( (:AbstractState_acentric_factor, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_alpha0(handle::Clong)
+
+Return the term alpha 0
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_alpha0(handle::Clong)
+    output = ccall( (:AbstractState_alpha0, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_alphar(handle::Clong)
+
+Return the term alpha r
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_alphar(handle::Clong)
+    output = ccall( (:AbstractState_alphar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_apply_simple_mixing_rule(handle::Clong, i::Integer, j::Integer, model::AbstractString)
+
+Apply a simple mixing rule (EXPERT USE ONLY!!!)
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+* `i`: Index of the component
+* `j`: Index of the component
+* `model`: Mixing rule (like "linear", "Lorentz-Berthelot")
+"""
+function AbstractState_apply_simple_mixing_rule(handle::Clong, i::Integer, j::Integer, model::AbstractString)
+    ccall( (:AbstractState_apply_simple_mixing_rule, "CoolProp"), Nothing, (Clong, Clong, Clong, Cstring, Ref{Clong}, Ptr{UInt8}, Clong), handle, i, j, model, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return nothing
+end
+
+"""
+    AbstractState_backend_name(handle::Clong)
+
+Get a string representation of the backend - for instance "HelmholtzEOSMixtureBackend" for the core mixture model in CoolProp
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_backend_name(handle::Clong)
+    output = Vector{UInt8}(undef, buffer_length)
+    ccall( (:AbstractState_backend_name, "CoolProp"), Nothing, (Clong, Ptr{UInt8}, Ref{Clong}, Ptr{UInt8}, Clong), handle, output, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    output[end] = 0
+    return GC.@preserve output unsafe_string(pointer(output))
+end
+
+"""
+    AbstractState_change_EOS(handle::Clong, i::Integer, EOS_name::AbstractString)
+
+Return the term alpha r
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+* `i`: Index of the component to change (if a pure fluid, i=0)
+* `EOS_name`: Name of the EOS to use (something like "SRK", "PR", "XiangDeiters", but backend-specific)
+"""
+function AbstractState_change_EOS(handle::Clong, i::Integer, EOS_name::AbstractString)
+    ccall( (:AbstractState_change_EOS, "CoolProp"), Nothing, (Clong, Clong, Cstring, Ref{Clong}, Ptr{UInt8}, Clong), handle, i, EOS_name, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return nothing
+end
+
+"""
+    AbstractState_chemical_potential(handle::Clong, i::Integer)
+
+Return the term alpha r
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+* `i`: Index of the component to change (if a pure fluid, i=0)
+"""
+function AbstractState_chemical_potential(handle::Clong, i::Integer)
+    output = ccall( (:AbstractState_chemical_potential, "CoolProp"), Cdouble, (Clong, Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, i, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_compressibility_factor(handle::Clong)
+
+Return the compressibility factor
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_compressibility_factor(handle::Clong)
+    output = ccall( (:AbstractState_compressibility_factor, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_conductivity(handle::Clong)
+
+Return the thermal conductivity in W/m/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_conductivity(handle::Clong)
+    output = ccall( (:AbstractState_conductivity, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_cp0mass(handle::Clong)
+
+Return the mass constant pressure specific heat for ideal gas part only in J/kg/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_cp0mass(handle::Clong)
+    output = ccall( (:AbstractState_cp0mass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_cp0molar(handle::Clong)
+
+Return the molar constant pressure specific heat for ideal gas part only in J/mol/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_cp0molar(handle::Clong)
+    output = ccall( (:AbstractState_cp0molar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_cpmass(handle::Clong)
+
+Return the mass constant pressure specific heat in J/kg/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_cpmass(handle::Clong)
+    output = ccall( (:AbstractState_cpmass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_cpmolar(handle::Clong)
+
+Return the molar constant pressure specific heat in J/mol/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_cpmolar(handle::Clong)
+    output = ccall( (:AbstractState_cpmolar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_cvmass(handle::Clong)
+
+Return the mass constant volume specific heat in J/kg/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_cvmass(handle::Clong)
+    output = ccall( (:AbstractState_cvmass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_cvmolar(handle::Clong)
+
+Return the molar constant volume specific heat in J/mol/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_cvmolar(handle::Clong)
+    output = ccall( (:AbstractState_cvmolar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d2alpha0_dDelta2(handle::Clong)
+
+Return the term d2alpha0_dDelta2
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d2alpha0_dDelta2(handle::Clong)
+    output = ccall( (:AbstractState_d2alpha0_dDelta2, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d2alpha0_dDelta_dTau(handle::Clong)
+
+Return the term d2alpha0_dDelta_dTau
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d2alpha0_dDelta_dTau(handle::Clong)
+    output = ccall( (:AbstractState_d2alpha0_dDelta_dTau, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d2alpha0_dTau2(handle::Clong)
+
+Return the term d2alpha0_dTau2
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d2alpha0_dTau2(handle::Clong)
+    output = ccall( (:AbstractState_d2alpha0_dTau2, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d2alphar_dDelta2(handle::Clong)
+
+Return the term d2alphar_dDelta2
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d2alphar_dDelta2(handle::Clong)
+    output = ccall( (:AbstractState_d2alphar_dDelta2, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d2alphar_dDelta_dTau(handle::Clong)
+
+Return the term d2alphar_dDelta_dTau
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d2alphar_dDelta_dTau(handle::Clong)
+    output = ccall( (:AbstractState_d2alphar_dDelta_dTau, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d2alphar_dTau2(handle::Clong)
+
+Return the term d2alphar_dTau2
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d2alphar_dTau2(handle::Clong)
+    output = ccall( (:AbstractState_d2alphar_dTau2, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d3alpha0_dDelta2_dTau(handle::Clong)
+
+Return the term d3alpha0_dDelta2_dTau
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d3alpha0_dDelta2_dTau(handle::Clong)
+    output = ccall( (:AbstractState_d3alpha0_dDelta2_dTau, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d3alpha0_dDelta3(handle::Clong)
+
+Return the term d3alpha0_dDelta3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d3alpha0_dDelta3(handle::Clong)
+    output = ccall( (:AbstractState_d3alpha0_dDelta3, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d3alpha0_dDelta_dTau2(handle::Clong)
+
+Return the term d3alpha0_dDelta_dTau2
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d3alpha0_dDelta_dTau2(handle::Clong)
+    output = ccall( (:AbstractState_d3alpha0_dDelta_dTau2, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d3alpha0_dTau3(handle::Clong)
+
+Return the term d3alpha0_dTau3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d3alpha0_dTau3(handle::Clong)
+    output = ccall( (:AbstractState_d3alpha0_dTau3, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d3alphar_dDelta2_dTau(handle::Clong)
+
+Return the term d3alphar_dDelta2_dTau
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d3alphar_dDelta2_dTau(handle::Clong)
+    output = ccall( (:AbstractState_d3alphar_dDelta2_dTau, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d3alphar_dDelta3(handle::Clong)
+
+Return the term d3alphar_dDelta3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d3alphar_dDelta3(handle::Clong)
+    output = ccall( (:AbstractState_d3alphar_dDelta3, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d3alphar_dDelta_dTau2(handle::Clong)
+
+Return the term d3alphar_dDelta_dTau2
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d3alphar_dDelta_dTau2(handle::Clong)
+    output = ccall( (:AbstractState_d3alphar_dDelta_dTau2, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d3alphar_dTau3(handle::Clong)
+
+Return the term d3alphar_dTau3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d3alphar_dTau3(handle::Clong)
+    output = ccall( (:AbstractState_d3alphar_dTau3, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d4alphar_dDelta2_dTau2(handle::Clong)
+
+Return the term d4alphar_dDelta2_dTau2
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d4alphar_dDelta2_dTau2(handle::Clong)
+    output = ccall( (:AbstractState_d4alphar_dDelta2_dTau2, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d4alphar_dDelta3_dTau(handle::Clong)
+
+Return the term d4alphar_dDelta3_dTau
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d4alphar_dDelta3_dTau(handle::Clong)
+    output = ccall( (:AbstractState_d4alphar_dDelta3_dTau, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d4alphar_dDelta4(handle::Clong)
+
+Return the term d4alphar_dDelta4
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d4alphar_dDelta4(handle::Clong)
+    output = ccall( (:AbstractState_d4alphar_dDelta4, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d4alphar_dDelta_dTau3(handle::Clong)
+
+Return the term d4alphar_dDelta_dTau3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d4alphar_dDelta_dTau3(handle::Clong)
+    output = ccall( (:AbstractState_d4alphar_dDelta_dTau3, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_d4alphar_dTau4(handle::Clong)
+
+Return the term d4alphar_dTau4
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_d4alphar_dTau4(handle::Clong)
+    output = ccall( (:AbstractState_d4alphar_dTau4, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_dalpha0_dDelta(handle::Clong)
+
+Return the term dalpha0_dDelta
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_dalpha0_dDelta(handle::Clong)
+    output = ccall( (:AbstractState_dalpha0_dDelta, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_dalpha0_dTau(handle::Clong)
+
+Return the term dalpha0_dTau
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_dalpha0_dTau(handle::Clong)
+    output = ccall( (:AbstractState_dalpha0_dTau, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_dalphar_dDelta(handle::Clong)
+
+Return the term dalphar_dDelta
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_dalphar_dDelta(handle::Clong)
+    output = ccall( (:AbstractState_dalphar_dDelta, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_dalphar_dTau(handle::Clong)
+
+Return the term dalphar_dTau
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_dalphar_dTau(handle::Clong)
+    output = ccall( (:AbstractState_dalphar_dTau, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_delta(handle::Clong)
+
+Return the reduced density
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_delta(handle::Clong)
+    output = ccall( (:AbstractState_delta, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_first_two_phase_deriv(handle::Clong, of::Clong, wrt::Clong, constant::Clong)
+
+Calculate the first partial derivative in homogeneous phases from the AbstractState using integer values for the desired parameters.
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+* `of`: The parameter of which the derivative is being taken
+* `Wrt`: The derivative with with respect to this parameter
+* `Constant`: The parameter that is not affected by the derivative
+
+# Example
+```julia
+julia> as = AbstractState_factory("HEOS", "Water");
+julia> AbstractState_update(as, "PQ_INPUTS", 15e5, 0);
+julia> AbstractState_first_two_phase_deriv(as, get_param_index("Dmolar"), get_param_index("Hmolar"), get_param_index("P"))
+-155.22977645893525
+```
+
+# Ref
+double CoolProp::AbstractState_first_two_phase_deriv(const long handle, const long Of, const long Wrt, const long Constant, long* errcode, char* message_buffer, const long buffer_length);
+"""
+function AbstractState_first_two_phase_deriv(handle::Clong, of::Clong, wrt::Clong, constant::Clong)
+    output = ccall( (:AbstractState_first_two_phase_deriv, "CoolProp"), Cdouble, (Clong, Clong, Clong, Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, of, wrt, constant, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    if output == -Inf
+        error("CoolProp: no correct state has been set with AbstractState_update")
+    end
+    return output
+end
+
+"""
+    AbstractState_fundamental_derivative_of_gas_dynamics(handle::Clong)
+
+Return the fundamental derivative of gas dynamics
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_fundamental_derivative_of_gas_dynamics(handle::Clong)
+    output = ccall( (:AbstractState_fundamental_derivative_of_gas_dynamics, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_gas_constant(handle::Clong)
+
+Return the mole-fraction weighted gas constant in J/mol/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_gas_constant(handle::Clong)
+    output = ccall( (:AbstractState_gas_constant, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_gibbsmass(handle::Clong)
+
+Return the Gibbs energy in J/kg
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_gibbsmass(handle::Clong)
+    output = ccall( (:AbstractState_gibbsmass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_gibbsmass_excess(handle::Clong)
+
+Return the excess Gibbs energy in J/kg
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_gibbsmass_excess(handle::Clong)
+    output = ccall( (:AbstractState_gibbsmass_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_gibbsmolar(handle::Clong)
+
+Return the Gibbs energy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_gibbsmolar(handle::Clong)
+    output = ccall( (:AbstractState_gibbsmolar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_gibbsmolar_excess(handle::Clong)
+
+Return the excess Gibbs energy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_gibbsmolar_excess(handle::Clong)
+    output = ccall( (:AbstractState_gibbsmolar_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_gibbsmolar_residual(handle::Clong)
+
+Return the residual Gibbs energy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_gibbsmolar_residual(handle::Clong)
+    output = ccall( (:AbstractState_gibbsmolar_residual, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_helmholtzmass(handle::Clong)
+
+Return the Helmholtz energy in J/kg
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_helmholtzmass(handle::Clong)
+    output = ccall( (:AbstractState_helmholtzmass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_helmholtzmass_excess(handle::Clong)
+
+Return the excess Helmholtz energy in J/kg
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_helmholtzmass_excess(handle::Clong)
+    output = ccall( (:AbstractState_helmholtzmass_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_helmholtzmolar(handle::Clong)
+
+Return the Helmholtz energy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_helmholtzmolar(handle::Clong)
+    output = ccall( (:AbstractState_helmholtzmolar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_helmholtzmolar_excess(handle::Clong)
+
+Return the excess Helmholtz energy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_helmholtzmolar_excess(handle::Clong)
+    output = ccall( (:AbstractState_helmholtzmolar_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_hmass(handle::Clong)
+
+Return the mass enthalpy in J/kg
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_hmass(handle::Clong)
+    output = ccall( (:AbstractState_hmass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_hmass_excess(handle::Clong)
+
+Return the excess mass enthalpy in J/kg
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_hmass_excess(handle::Clong)
+    output = ccall( (:AbstractState_hmass_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_hmolar(handle::Clong)
+
+Return the molar enthalpy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_hmolar(handle::Clong)
+    output = ccall( (:AbstractState_hmolar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_hmolar_excess(handle::Clong)
+
+Return the excess molar enthalpy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_hmolar_excess(handle::Clong)
+    output = ccall( (:AbstractState_hmolar_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_hmolar_residual(handle::Clong)
+
+Return the residual molar enthalpy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_hmolar_residual(handle::Clong)
+    output = ccall( (:AbstractState_hmolar_residual, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_isentropic_expansion_coefficient(handle::Clong)
+
+Return the isentropic expansion coefficient
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_isentropic_expansion_coefficient(handle::Clong)
+    output = ccall( (:AbstractState_isentropic_expansion_coefficient, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_isobaric_expansion_coefficient(handle::Clong)
+
+Return the isobaric expansion coefficient
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_isobaric_expansion_coefficient(handle::Clong)
+    output = ccall( (:AbstractState_isobaric_expansion_coefficient, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_isothermal_compressibility(handle::Clong)
+
+Return the isothermal compressibility
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_isothermal_compressibility(handle::Clong)
+    output = ccall( (:AbstractState_isothermal_compressibility, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_molar_mass(handle::Clong)
+
+Return the molar mass in kg/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_molar_mass(handle::Clong)
+    output = ccall( (:AbstractState_molar_mass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_p(handle::Clong)
+
+Return the pressure in Pa
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_p(handle::Clong)
+    output = ccall( (:AbstractState_p, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_p_critical(handle::Clong)
+
+Return the critical pressure in Pa
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_p_critical(handle::Clong)
+    output = ccall( (:AbstractState_p_critical, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_p_triple(handle::Clong)
+
+Return the triple point pressure in Pa
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_p_triple(handle::Clong)
+    output = ccall( (:AbstractState_p_triple, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_phase(handle::Clong)
+
+Get the phase of the state
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_phase(handle::Clong)
+    output = ccall( (:AbstractState_phase, "CoolProp"), Clong, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_pmax(handle::Clong)
+
+Get the maximum pressure in Pa
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_pmax(handle::Clong)
+    output = ccall( (:AbstractState_pmax, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_rhomass(handle::Clong)
+
+Return the mass density in kg/m^3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_rhomass(handle::Clong)
+    output = ccall( (:AbstractState_rhomass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_rhomass_critical(handle::Clong)
+
+Return the critical mass density in kg/m^3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_rhomass_critical(handle::Clong)
+    output = ccall( (:AbstractState_rhomass_critical, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_rhomass_reducing(handle::Clong)
+
+Return the mass density at reducing point in kg/m^3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_rhomass_reducing(handle::Clong)
+    output = ccall( (:AbstractState_rhomass_reducing, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_rhomolar(handle::Clong)
+
+Return the molar density in mol/m^3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_rhomolar(handle::Clong)
+    output = ccall( (:AbstractState_rhomolar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_rhomolar_critical(handle::Clong)
+
+Return the critical molar density in mol/m^3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_rhomolar_critical(handle::Clong)
+    output = ccall( (:AbstractState_rhomolar_critical, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_rhomolar_reducing(handle::Clong)
+
+Return the molar density at the reducing point in mol/m^3
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_rhomolar_reducing(handle::Clong)
+    output = ccall( (:AbstractState_rhomolar_reducing, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_smass(handle::Clong)
+
+Return the mass entropy in J/kg/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_smass(handle::Clong)
+    output = ccall( (:AbstractState_smass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_smass_excess(handle::Clong)
+
+Return the excess mass entropy in J/kg/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_smass_excess(handle::Clong)
+    output = ccall( (:AbstractState_smass_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_smolar(handle::Clong)
+
+Return the molar entropy in J/mol/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_smolar(handle::Clong)
+    output = ccall( (:AbstractState_smolar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_smolar_excess(handle::Clong)
+
+Return the excess molar entropy in J/mol/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_smolar_excess(handle::Clong)
+    output = ccall( (:AbstractState_smolar_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_smolar_residual(handle::Clong)
+
+Return the residual molar entropy in J/mol/K
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_smolar_residual(handle::Clong)
+    output = ccall( (:AbstractState_smolar_residual, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_speed_sound(handle::Clong)
+
+Return the speed of sound in m/s
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_speed_sound(handle::Clong)
+    output = ccall( (:AbstractState_speed_sound, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_surface_tension(handle::Clong)
+
+Return the surface tension in N/m
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_surface_tension(handle::Clong)
+    output = ccall( (:AbstractState_surface_tension, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_tau(handle::Clong)
+
+Return the reciprocal of the reduced temperature
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_tau(handle::Clong)
+    output = ccall( (:AbstractState_tau, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_umass(handle::Clong)
+
+Return the mass internal energy in J/kg
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_umass(handle::Clong)
+    output = ccall( (:AbstractState_umass, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_umass_excess(handle::Clong)
+
+Return the excess internal energy in J/kg
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_umass_excess(handle::Clong)
+    output = ccall( (:AbstractState_umass_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_umolar(handle::Clong)
+
+Return the molar internal energy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_umolar(handle::Clong)
+    output = ccall( (:AbstractState_umolar, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_umolar_excess(handle::Clong)
+
+Return the excess internal energy in J/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_umolar_excess(handle::Clong)
+    output = ccall( (:AbstractState_umolar_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_viscosity(handle::Clong)
+
+Return the viscosity in Pa-s
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_viscosity(handle::Clong)
+    output = ccall( (:AbstractState_viscosity, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_volumemass_excess(handle::Clong)
+
+Return the excess volume in m^3/kg
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_volumemass_excess(handle::Clong)
+    output = ccall( (:AbstractState_volumemass_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+"""
+    AbstractState_volumemolar_excess(handle::Clong)
+
+Return the excess volume in m^3/mol
+
+# Arguments
+* `handle`: The integer handle for the state class stored in memory
+"""
+function AbstractState_volumemolar_excess(handle::Clong)
+    output = ccall( (:AbstractState_volumemolar_excess, "CoolProp"), Cdouble, (Clong, Ref{Clong}, Ptr{UInt8}, Clong), handle, errcode, message_buffer::Array{UInt8, 1}, buffer_length)
+    raise(errcode, message_buffer)
+    return output
+end
+
+for symorigin = [:PropsSI, :PhaseSI, :K2F, :F2K, :HAPropsSI, :AbstractState_factory, :AbstractState_free, :AbstractState_set_fractions, :AbstractState_update, :AbstractState_Bvirial, :AbstractState_Cvirial, :AbstractState_PIP, :AbstractState_Prandtl, :AbstractState_Q, :AbstractState_T, :AbstractState_T_critical, :AbstractState_T_reducing, :AbstractState_Tmax, :AbstractState_Tmin, :AbstractState_Ttriple, :AbstractState_acentric_factor, :AbstractState_alpha0, :AbstractState_alphar, :AbstractState_apply_simple_mixing_rule, :AbstractState_backend_name, :AbstractState_change_EOS, :AbstractState_chemical_potential, :AbstractState_compressibility_factor, :AbstractState_conductivity, :AbstractState_cp0mass, :AbstractState_cp0molar, :AbstractState_cpmass, :AbstractState_cpmolar, :AbstractState_cvmass, :AbstractState_cvmolar, :AbstractState_d2alpha0_dDelta2, :AbstractState_d2alpha0_dDelta_dTau, :AbstractState_d2alpha0_dTau2, :AbstractState_d2alphar_dDelta2, :AbstractState_d2alphar_dDelta_dTau, :AbstractState_d2alphar_dTau2, :AbstractState_d3alpha0_dDelta2_dTau, :AbstractState_d3alpha0_dDelta3, :AbstractState_d3alpha0_dDelta_dTau2, :AbstractState_d3alpha0_dTau3, :AbstractState_d3alphar_dDelta2_dTau, :AbstractState_d3alphar_dDelta3, :AbstractState_d3alphar_dDelta_dTau2, :AbstractState_d3alphar_dTau3, :AbstractState_d4alphar_dDelta2_dTau2, :AbstractState_d4alphar_dDelta3_dTau, :AbstractState_d4alphar_dDelta4, :AbstractState_d4alphar_dDelta_dTau3, :AbstractState_d4alphar_dTau4, :AbstractState_dalpha0_dDelta, :AbstractState_dalpha0_dTau, :AbstractState_dalphar_dDelta, :AbstractState_dalphar_dTau, :AbstractState_delta, :AbstractState_first_partial_deriv, :AbstractState_first_saturation_deriv, :AbstractState_first_two_phase_deriv, :AbstractState_fundamental_derivative_of_gas_dynamics, :AbstractState_gas_constant, :AbstractState_gibbsmass, :AbstractState_gibbsmass_excess, :AbstractState_gibbsmolar, :AbstractState_gibbsmolar_excess, :AbstractState_gibbsmolar_residual, :AbstractState_helmholtzmass, :AbstractState_helmholtzmass, :AbstractState_helmholtzmolar, :AbstractState_helmholtzmolar_excess, :AbstractState_hmass, :AbstractState_hmass_excess, :AbstractState_hmolar, :AbstractState_hmolar_excess, :AbstractState_hmolar_residual, :AbstractState_isentropic_expansion_coefficient, :AbstractState_isobaric_expansion_coefficient, :AbstractState_isothermal_compressibility, :AbstractState_keyed_output, :AbstractState_molar_mass, :AbstractState_output, :AbstractState_p, :AbstractState_p_critical, :AbstractState_p_triple, :AbstractState_phase, :AbstractState_pmax, :AbstractState_rhomass, :AbstractState_rhomass_critical, :AbstractState_rhomass_reducing, :AbstractState_rhomolar, :AbstractState_rhomolar_critical, :AbstractState_rhomolar_reducing, :AbstractState_smass, :AbstractState_smass_excess, :AbstractState_smolar, :AbstractState_smolar_excess, :AbstractState_smolar_residual, :AbstractState_specify_phase, :AbstractState_speed_sound, :AbstractState_surface_tension, :AbstractState_tau, :AbstractState_umass, :AbstractState_umass_excess, :AbstractState_umolar, :AbstractState_umolar_excess, :AbstractState_unspecify_phase, :AbstractState_update_and_common_out, :AbstractState_update_and_1_out, :AbstractState_update_and_5_out, :AbstractState_viscosity, :AbstractState_volumemass_excess, :AbstractState_volumemolar_excess, :AbstractState_set_binary_interaction_double, :AbstractState_set_cubic_alpha_C, :AbstractState_set_fluid_parameter_double, :AbstractState_build_phase_envelope, :AbstractState_build_spinodal, :AbstractState_all_critical_points, :AbstractState_get_phase_envelope_data, :AbstractState_get_spinodal_data]
     sym = Symbol(lowercase(string(symorigin)))
     @eval const $sym = $symorigin
     @eval export $sym, $symorigin
