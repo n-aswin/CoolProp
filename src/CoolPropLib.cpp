@@ -1027,3 +1027,1062 @@ EXPORT_CODE void CONVENTION add_fluids_as_JSON(const char* backend, const char* 
         HandleException(errcode, message_buffer, buffer_length);
     }
 }
+
+EXPORT_CODE double CONVENTION AbstractState_Bvirial(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->Bvirial();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_Cvirial(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->Cvirial();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_PIP(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->PIP();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_Prandtl(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->Prandtl();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_Q(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->Q();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_T(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->T();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_T_critical(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->T_critical();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_T_reducing(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->T_reducing();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_Tmax(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->Tmax();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_Tmin(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->Tmin();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_Ttriple(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->Ttriple();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_acentric_factor(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->acentric_factor();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_alpha0(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->alpha0();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_alphar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->alphar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE void CONVENTION AbstractState_apply_simple_mixing_rule(const long handle, const long i, const long j, const char* model,
+                                                                   long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        AS->apply_simple_mixing_rule(static_cast<std::size_t>(i), static_cast<std::size_t>(j), model);
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+}
+
+EXPORT_CODE void CONVENTION AbstractState_change_EOS(const long handle, const long i, const char* EOS_name, long* errcode,
+                                                     char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        AS->change_EOS(static_cast<std::size_t>(i), EOS_name);
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+}
+
+EXPORT_CODE double CONVENTION AbstractState_chemical_potential(const long handle, const long i, long* errcode, char* message_buffer,
+                                                               const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->chemical_potential(static_cast<std::size_t>(i));
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_compressibility_factor(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->compressibility_factor();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_conductivity(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->conductivity();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_cp0mass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->cp0mass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_cp0molar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->cp0molar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_cpmass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->cpmass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_cpmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->cpmolar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_cvmass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->cvmass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_cvmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->cvmolar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d2alpha0_dDelta2(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d2alpha0_dDelta2();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d2alpha0_dDelta_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d2alpha0_dDelta_dTau();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d2alpha0_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d2alpha0_dTau2();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d2alphar_dDelta2(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d2alphar_dDelta2();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d2alphar_dDelta_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d2alphar_dDelta_dTau();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d2alphar_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d2alphar_dTau2();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d3alpha0_dDelta2_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d3alpha0_dDelta2_dTau();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d3alpha0_dDelta3(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d3alpha0_dDelta3();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d3alpha0_dDelta_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d3alpha0_dDelta_dTau2();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d3alpha0_dTau3(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d3alpha0_dTau3();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d3alphar_dDelta2_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d3alphar_dDelta2_dTau();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d3alphar_dDelta3(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d3alphar_dDelta3();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d3alphar_dDelta_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d3alphar_dDelta_dTau2();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d3alphar_dTau3(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d3alphar_dTau3();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dDelta2_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d4alphar_dDelta2_dTau2();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dDelta3_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d4alphar_dDelta3_dTau();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dDelta4(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d4alphar_dDelta4();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dDelta_dTau3(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d4alphar_dDelta_dTau3();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dTau4(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->d4alphar_dTau4();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_dalpha0_dDelta(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->dalpha0_dDelta();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_dalpha0_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->dalpha0_dTau();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_dalphar_dDelta(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->dalphar_dDelta();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_dalphar_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->dalphar_dTau();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_delta(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->delta();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_first_two_phase_deriv(const long handle, const long Of, const long Wrt, const long Constant, long* errcode,
+                                                                char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->first_two_phase_deriv(static_cast<CoolProp::parameters>(Of), static_cast<CoolProp::parameters>(Wrt),
+                                       static_cast<CoolProp::parameters>(Constant));
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_fundamental_derivative_of_gas_dynamics(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->fundamental_derivative_of_gas_dynamics();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_gas_constant(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->gas_constant();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_gibbsmass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->gibbsmass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_gibbsmass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->gibbsmass_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_gibbsmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->gibbsmolar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_gibbsmolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->gibbsmolar_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_gibbsmolar_residual(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->gibbsmolar_residual();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_helmholtzmass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->helmholtzmass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_helmholtzmass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->helmholtzmass_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_helmholtzmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->helmholtzmolar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_helmholtzmolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->helmholtzmolar_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_hmass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->hmass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_hmass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->hmass_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_hmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->hmolar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_hmolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->hmolar_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_hmolar_residual(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->hmolar_residual();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_isentropic_expansion_coefficient(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->isentropic_expansion_coefficient();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_isobaric_expansion_coefficient(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->isobaric_expansion_coefficient();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_isothermal_compressibility(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->isothermal_compressibility();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_molar_mass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->molar_mass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_p(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->p();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_p_critical(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->p_critical();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_p_triple(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->p_triple();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE long CONVENTION AbstractState_phase(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->phase();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return -1;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_pmax(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->pmax();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_rhomass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->rhomass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_rhomass_critical(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->rhomass_critical();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_rhomass_reducing(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->rhomass_reducing();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_rhomolar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->rhomolar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_rhomolar_critical(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->rhomolar_critical();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_rhomolar_reducing(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->rhomolar_reducing();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_smass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->smass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_smass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->smass_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_smolar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->smolar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_smolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->smolar_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_smolar_residual(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->smolar_residual();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_speed_sound(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->speed_sound();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_surface_tension(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->surface_tension();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_tau(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->tau();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_umass(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->umass();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_umass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->umass_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_umolar(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->umolar();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_umolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->umolar_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_viscosity(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->viscosity();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_volumemass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->volumemass_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}
+
+EXPORT_CODE double CONVENTION AbstractState_volumemolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length) {
+    *errcode = 0;
+    try {
+        shared_ptr<CoolProp::AbstractState>& AS = handle_manager.get(handle);
+        return AS->volumemolar_excess();
+    } catch (...) {
+        HandleException(errcode, message_buffer, buffer_length);
+    }
+    return _HUGE;
+}

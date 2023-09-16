@@ -781,6 +781,979 @@ EXPORT_CODE void CONVENTION AbstractState_backend_name(const long handle, char* 
 EXPORT_CODE void CONVENTION add_fluids_as_JSON(const char* backend, const char* fluidstring, long* errcode, char* message_buffer,
                                                const long buffer_length);
 
+/**
+    * @brief Return the B virial coefficient
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_Bvirial(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the C virial coefficient
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_Cvirial(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the phase identification parameter (PIP) of G. Venkatarathnam and L.R. Oellrich
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_PIP(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the Prandtl number (dimensionless)
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_Prandtl(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the vapor quality (mol/mol); Q = 0 for saturated liquid
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_Q(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the temperature in K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_T(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the critical temperature in K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_T_critical(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the reducing point temperature in K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_T_reducing(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Get the maximum temperature in K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_Tmax(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Get the minimum temperature in K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_Tmin(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Get the triple point temperature in K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_Ttriple(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the acentric factor
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_acentric_factor(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term alpha 0
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_alpha0(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term alpha r
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_alphar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Apply a simple mixing rule (EXPERT USE ONLY!!!)
+    * @param handle The integer handle for the state class stored in memory
+    * @param i Index of the component
+    * @param j Index of the component
+    * @param model Mixing rule (like "linear", ""Lorentz-Berthelot")
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE void CONVENTION AbstractState_apply_simple_mixing_rule(const long handle, const long i, const long j, const char* model,
+                                                                   long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Change the equation of state for a given component to a specified EOS
+    * @param handle The integer handle for the state class stored in memory
+    * @param i Index of the component to change (if a pure fluid, i=0)
+    * @param EOS_name Name of the EOS to use (something like "SRK", "PR", "XiangDeiters", but backend-specific)
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE void CONVENTION AbstractState_change_EOS(const long handle, const long i, const char* EOS_name, long* errcode,
+                                                     char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the chemical potential of the i-th component of the mixture
+    * @param handle The integer handle for the state class stored in memory
+    * @param i Index of the component to change (if a pure fluid, i=0)
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_chemical_potential(const long handle, const long i, long* errcode, char* message_buffer,
+                                                               const long buffer_length);
+
+/**
+    * @brief Return the compressibility factor
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_compressibility_factor(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the thermal conductivity in W/m/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_conductivity(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the mass constant pressure specific heat for ideal gas part only in J/kg/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_cp0mass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the molar constant pressure specific heat for ideal gas part only in J/mol/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_cp0molar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the mass constant pressure specific heat in J/kg/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_cpmass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the molar constant pressure specific heat in J/mol/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_cpmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the mass constant volume specific heat in J/kg/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_cvmass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the molar constant volume specific heat in J/mol/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_cvmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d2alpha0_dDelta2
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d2alpha0_dDelta2(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d2alpha0_dDelta_dTau
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d2alpha0_dDelta_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d2alpha0_dTau2
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d2alpha0_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d2alphar_dDelta2
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d2alphar_dDelta2(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d2alphar_dDelta_dTau
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d2alphar_dDelta_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d2alphar_dTau2
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d2alphar_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d3alpha0_dDelta2_dTau
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d3alpha0_dDelta2_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d3alpha0_dDelta3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d3alpha0_dDelta3(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d3alpha0_dDelta_dTau2
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d3alpha0_dDelta_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d3alpha0_dTau3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d3alpha0_dTau3(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d3alphar_dDelta2_dTau
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d3alphar_dDelta2_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d3alphar_dDelta3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d3alphar_dDelta3(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d3alphar_dDelta_dTau2
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d3alphar_dDelta_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d3alphar_dTau3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d3alphar_dTau3(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d4alphar_dDelta2_dTau2
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dDelta2_dTau2(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d4alphar_dDelta3_dTau
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dDelta3_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d4alphar_dDelta4
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dDelta4(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d4alphar_dDelta_dTau3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dDelta_dTau3(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term d4alphar_dTau4
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_d4alphar_dTau4(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term dalpha0_dDelta
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_dalpha0_dDelta(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term dalpha0_dTau
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_dalpha0_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term dalphar_dDelta
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_dalphar_dDelta(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the term dalphar_dTau
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_dalphar_dTau(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the reduced density
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_delta(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Calculate the first "two-phase" derivative as described by Thorade and Sadaat, EAS, 2013 from the AbstractState using integer values for the desired parameters
+    * @param handle The integer handle for the state class stored in memory
+    * @param Of The parameter of which the derivative is being taken
+    * @param Wrt The derivative with with respect to this parameter
+    * @param Constant The parameter that is not affected by the derivative
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_first_two_phase_deriv(const long handle, const long Of, const long Wrt, const long Constant, long* errcode,
+                                                                char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the fundamental derivative of gas dynamics
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_fundamental_derivative_of_gas_dynamics(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the mole-fraction weighted gas constant in J/mol/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_gas_constant(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the Gibbs energy in J/kg
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_gibbsmass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess Gibbs energy in J/kg
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_gibbsmass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the Gibbs energy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_gibbsmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess Gibbs energy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_gibbsmolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the residual Gibbs energy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_gibbsmolar_residual(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the Helmholtz energy in J/kg
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_helmholtzmass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess Helmholtz energy in J/kg
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_helmholtzmass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the Helmholtz energy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_helmholtzmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess Helmholtz energy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_helmholtzmolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the mass enthalpy in J/kg
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_hmass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess mass enthalpy in J/kg
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_hmass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the molar enthalpy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_hmolar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess molar enthalpy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_hmolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the residual molar enthalpy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_hmolar_residual(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the isentropic expansion coefficient
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_isentropic_expansion_coefficient(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the isobaric expansion coefficient
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_isobaric_expansion_coefficient(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the isothermal compressibility
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_isothermal_compressibility(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the molar mass in kg/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_molar_mass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the pressure in Pa
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_p(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the critical pressure in Pa
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_p_critical(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the triple point pressure in Pa
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_p_triple(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Get the phase of the state
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE long CONVENTION AbstractState_phase(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Get the maximum pressure in Pa
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_pmax(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the mass density in kg/m^3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_rhomass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the critical mass density in kg/m^3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_rhomass_critical(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the mass density at reducing point in kg/m^3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_rhomass_reducing(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the molar density in mol/m^3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_rhomolar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the critical molar density in mol/m^3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_rhomolar_critical(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the molar density at the reducing point in mol/m^3
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_rhomolar_reducing(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the mass entropy in J/kg/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_smass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess mass entropy in J/kg/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_smass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the molar entropy in J/mol/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_smolar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess molar entropy in J/mol/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_smolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the residual molar entropy in J/mol/K
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_smolar_residual(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the speed of sound in m/s
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_speed_sound(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the surface tension in N/m
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_surface_tension(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the reciprocal of the reduced temperature
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_tau(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the mass internal energy in J/kg
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_umass(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess internal energy in J/kg
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_umass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the molar internal energy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_umolar(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess internal energy in J/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_umolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the viscosity in Pa-s
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_viscosity(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess volume in m^3/kg
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_volumemass_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
+/**
+    * @brief Return the excess volume in m^3/mol
+    * @param handle The integer handle for the state class stored in memory
+    * @param errcode The errorcode that is returned (0 = no error, !0 = error)
+    * @param message_buffer A buffer for the error code
+    * @param buffer_length The length of the buffer for the error code
+    * @return
+    */
+EXPORT_CODE double CONVENTION AbstractState_volumemolar_excess(const long handle, long* errcode, char* message_buffer, const long buffer_length);
+
 // *************************************************************************************
 // *************************************************************************************
 // *****************************  DEPRECATED *******************************************
